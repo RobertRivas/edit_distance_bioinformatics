@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.contrib.auth.models import User, Group
+from rest_framework import viewsets
+from rest_framework import permissions
+from .serializers import EditDistanceWordsSerializer
+from .models import EditDistanceWords
 
-from django.http import HttpResponse
-# Create your views here.
-def index(request):
-    return HttpResponse("Hello, world. Lets calculate edit distance!!!")
+class EditDistanceWordsViewSet(viewsets.ModelViewSet):
+    queryset = EditDistanceWords.objects.all().order_by('word_one')
+    serializer_class = EditDistanceWordsSerializer
+
+

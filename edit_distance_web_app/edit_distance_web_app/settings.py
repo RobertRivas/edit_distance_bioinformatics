@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 
-    'editdistance',
+    'editdistance.apps.EditdistanceConfig',
+    'rest_framework',
 
 
 ]
@@ -81,7 +83,7 @@ WSGI_APPLICATION = 'edit_distance_web_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "editdistance_db",
+        'NAME': "edit_distance",
         'USER': "scythefuneral",
         'PASSWORD': "",
         'HOST': "localhost",
