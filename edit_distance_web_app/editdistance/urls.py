@@ -12,7 +12,7 @@ router.register(r'EditDistanceWords', views.EditDistanceWordsViewSet)
 
 urlpatterns = [
     # path('', TemplateView.as_view(template_name='react.html')),
-path('', include(router.urls)),
+    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 
     # url(r'^$', views.index, name="index"),
